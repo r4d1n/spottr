@@ -7,9 +7,10 @@
   <ion-content class="has-header">
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}">
-        {{friend.name}}
-        <div ng-show="friend.finder">
-          <img src="{{friend.finder.pic}}" >
+        {{friend.title}}
+        <div class="finder-info" ng-show="friend.finder">
+          <span>Spotted By: {{friend.finder.name}}</span>
+          <img class="headshot" src="{{friend.finder.pic}}" >
         </div>
         <!-- <ion-option-button class="button-calm"
           ng-click="editFriend(friend)">
