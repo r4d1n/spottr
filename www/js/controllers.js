@@ -3,9 +3,10 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, auth, $state, store) {
   auth.signin({
     closable: false,
+    icon: "https://s3.amazonaws.com/limechile.com/spottr/spottr-logo.png",
     dict: {
       signin: {
-       title: "spottr"
+       title: "digital scavenger hunt"       
       }
     },
     // This asks for the refresh token
@@ -31,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('FriendsCtrl', function($scope, Friends, $ionicModal) {
+.controller('FriendsCtrl', function($scope, Friends, $ionicModal, Camera) {
  $ionicModal.fromTemplateUrl('templates/friend-add-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -39,16 +40,35 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
   });
 
-  $scope.newFriend = {
+    $scope.newFriend = {
     name: '',
     description: ''
   };
 
-  $scope.friends = Friends.all();
 
-  $scope.showAddFriend = function() {
-    $scope.modal.show();
-  };
+    $scope.getPhoto = function() {
+        Camera.getPicture().then(function(imageURI) {
+            console.log(imageURI);
+            $scope.lastPhoto = imageURI;
+        }, function(err) {
+            console.err(err);
+        }, {
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false
+        });
+    };
+
+    $scope.friends = Friends.all();
+
+    $scope.showAddFriend = function () {
+        $scope.modal.show();
+    };
+
+    $scope.showFindPage = function () {
+
+    }
 
   $scope.addFriend = function() {
     if(!$scope.newFriend.$id) {
@@ -80,6 +100,36 @@ angular.module('starter.controllers', [])
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
+})
+    .config(function($compileProvider){
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    })
+
+.controller('FriendsCtrl', function($scope, Friends, Camera) {
+    $scope.friends = Friends.all();
+    $scope.getPhoto = function() {
+        console.log('Getting camera');
+        Camera.getPicture().then(function(imageURI) {
+            console.log(imageURI);
+            $scope.lastPhoto = imageURI;
+        }, function(err) {
+            console.err(err);
+        }, {
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false
+        });
+        /*
+         navigator.camera.getPicture(function(imageURI) {
+         console.log(imageURI);
+         }, function(err) {
+         }, {
+         quality: 50,
+         destinationType: Camera.DestinationType.DATA_URL
+         });
+         */
+    }
 })
 
 .controller('AccountCtrl', function($scope, auth, $state, store) {
