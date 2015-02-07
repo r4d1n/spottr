@@ -3,10 +3,12 @@ angular.module('starter.services', ['firebase'])
 /**
  * A simple example service that returns some data.
  */
+
 .service('Friends', function($firebase, store, $state) {
 
   var friendsRef = new Firebase("https://spottr.firebaseio.com");
   friendsRef.authWithCustomToken(store.get('firebaseToken'), function(error, auth) {
+
     if (error) {
       // There was an error logging in, redirect the user to login page
       $state.go('login');
@@ -34,6 +36,7 @@ angular.module('starter.services', ['firebase'])
 
   this.delete = function(friend) {
     friends.$remove(friend);
+
   };
 
 });

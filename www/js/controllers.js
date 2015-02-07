@@ -3,6 +3,11 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, auth, $state, store) {
   auth.signin({
     closable: false,
+    dict: {
+      signin: {
+       title: "spottr"
+      }
+    },
     // This asks for the refresh token
     // So that the user never has to log in again
     authParams: {
