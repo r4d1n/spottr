@@ -1,15 +1,15 @@
-<ion-modal-view>
+<ion-modal-view xmlns="http://www.w3.org/1999/html">
     <ion-header-bar>
-      <h1 class="title">Add new friend!</h1>
+      <h1 class="title">Add new spot!</h1>
     </ion-header-bar>
     <ion-content>
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="Friend name" ng-model="newFriend.name">
+          <input type="text" placeholder="describe the task..." ng-model="newFriend.title">
         </label>
-        <label class="item item-input">
-          <input type="text" placeholder="Description" ng-model="newFriend.description">
-        </label>
+        <!--<label class="item item-input">-->
+          <!--<input type="text" placeholder="URL" ng-model="newFriend.url"/>-->
+        <!--</label>-->
       </div>
       <div class="padding">
         <button class="button button-block button-positive" ng-click="addFriend()">Submit</button>

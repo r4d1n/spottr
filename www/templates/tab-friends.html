@@ -6,8 +6,26 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}">
-        {{friend.name}}
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" >
+          <div class="list card">
+
+              <div class="item item-avatar">
+                  <h2>{{friend.title}}</h2>
+              </div>
+                  <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+                  <img ng-src="{{lastPhoto}}" style="max-width: 100%">
+              <!--<div class="item item-image">-->
+                  <!--<img src="data:image/jpg;base64,{{friend.url}}"/>-->
+              <!--</div>-->
+              <!--<button class="button button-positive" ng-click="showFindPage">-->
+                  <!--I spot it-->
+              <!--</button>-->
+              <a class="item item-icon-left assertive" href="#">
+                  <i class="icon ion-music-note"></i>
+                  have fun spotting...
+              </a>
+
+          </div>
 
         <ion-option-button class="button-calm"
           ng-click="editFriend(friend)">
