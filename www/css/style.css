@@ -50,8 +50,8 @@ table {
 /* End CSS Reset */
 
 body {
-  font-family: 'Playfair Display', serif;
-}
+  font-family: 'Noto Sans', sans-serif;
+  }
 
 h1 {
   font-family: 'Lobster', cursive;
@@ -59,8 +59,8 @@ h1 {
 
 .headshot {
   height: 50px;
+  float: right;
 }
 
 .finder-info {
-  float: right;
 }
