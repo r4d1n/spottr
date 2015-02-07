@@ -49,7 +49,14 @@ table {
 
 /* End CSS Reset */
 
-/* Empty. Add your own CSS if you like */
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
 .headshot {
   height: 50px;
 }
