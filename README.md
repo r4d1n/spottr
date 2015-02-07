@@ -1,0 +1,2 @@
+# spottr
+scavenger hunt app
