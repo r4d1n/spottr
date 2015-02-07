@@ -3,9 +3,10 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, auth, $state, store) {
   auth.signin({
     closable: false,
+    icon: "https://s3.amazonaws.com/limechile.com/spottr/spottr-logo.png",
     dict: {
       signin: {
-       title: "spottr"
+       title: "digital scavenger hunt"       
       }
     },
     // This asks for the refresh token
