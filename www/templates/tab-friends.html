@@ -8,7 +8,9 @@
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}">
         {{friend.name}}
-
+        <div ng-show="friend.finder">
+          <img src="{{friend.finder.pic}}" >
+        </div>
         <ion-option-button class="button-calm"
           ng-click="editFriend(friend)">
           Edit
