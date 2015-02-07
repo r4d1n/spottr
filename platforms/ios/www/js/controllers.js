@@ -3,6 +3,12 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, auth, $state, store) {
   auth.signin({
     closable: false,
+    icon: "https://s3.amazonaws.com/limechile.com/spottr/spottr-logo.png",
+    dict: {
+      signin: {
+       title: "digital scavenger hunt"       
+      }
+    },
     // This asks for the refresh token
     // So that the user never has to log in again
     authParams: {
@@ -26,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('FriendsCtrl', function($scope, Friends, $ionicModal) {
+.controller('FriendsCtrl', function($scope, Friends, $ionicModal, Camera) {
  $ionicModal.fromTemplateUrl('templates/friend-add-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -34,21 +40,58 @@ angular.module('starter.controllers', [])
     $scope.modal = modal;
   });
 
-  $scope.newFriend = {
-    name: ''
+    $scope.newFriend = {
+    name: '',
+    description: ''
   };
 
-  $scope.friends = Friends.all();
 
-  $scope.showAddFriend = function() {
-    $scope.modal.show();
-  }
+    $scope.getPhoto = function() {
+        Camera.getPicture().then(function(imageURI) {
+            console.log(imageURI);
+            $scope.lastPhoto = imageURI;
+        }, function(err) {
+            console.err(err);
+        }, {
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false
+        });
+    };
+
+    $scope.friends = Friends.all();
+
+    $scope.showAddFriend = function () {
+        $scope.modal.show();
+    };
+
+    $scope.showFindPage = function () {
+
+    }
 
   $scope.addFriend = function() {
-    Friends.add($scope.newFriend.name);
-    $scope.newFriendName = '';
+    if(!$scope.newFriend.$id) {
+      Friends.add($scope.newFriend);
+    } else {
+      Friends.save($scope.newFriend);
+    }
+    $scope.newFriend = {};
     $scope.modal.hide();
-  }
+  };
+
+  $scope.deleteFriend = function(friend) {
+    Friends.delete(friend);
+  };
+
+  $scope.editFriend = function(friend) {
+    $scope.newFriend = friend;
+    $scope.modal.show();
+  };
+
+  $scope.close = function() {
+    $scope.modal.hide();
+  };
 
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
@@ -57,6 +100,36 @@ angular.module('starter.controllers', [])
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
+})
+    .config(function($compileProvider){
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    })
+
+.controller('FriendsCtrl', function($scope, Friends, Camera) {
+    $scope.friends = Friends.all();
+    $scope.getPhoto = function() {
+        console.log('Getting camera');
+        Camera.getPicture().then(function(imageURI) {
+            console.log(imageURI);
+            $scope.lastPhoto = imageURI;
+        }, function(err) {
+            console.err(err);
+        }, {
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false
+        });
+        /*
+         navigator.camera.getPicture(function(imageURI) {
+         console.log(imageURI);
+         }, function(err) {
+         }, {
+         quality: 50,
+         destinationType: Camera.DestinationType.DATA_URL
+         });
+         */
+    }
 })
 
 .controller('AccountCtrl', function($scope, auth, $state, store) {

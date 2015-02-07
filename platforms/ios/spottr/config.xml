@@ -31,9 +31,9 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
-    <name>Ionic + Auth0</name>
+    <name>spottr</name>
     <description>
-        Ionic + Auth0
+        The app that's going to win hack_a_ton
     </description>
     <author email="gonto@auth0.com" href="http://auth0.com/">
       Auth0
