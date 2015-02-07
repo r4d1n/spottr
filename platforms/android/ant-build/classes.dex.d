@@ -1,0 +1,27 @@
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes.dex : \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/R$attr.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/R$drawable.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/CordovaApp.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/R$xml.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/BuildConfig.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/R$string.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionicframework/basicsample710975/R.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard$1.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard$2.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$3.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$1.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$2.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowserDialog.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$InAppBrowserClient.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$4.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$1.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$3.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$2.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4$1.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/home/jrr/Documents/Dev/spottr/platforms/android/ant-build/dexedLibs/classes-bf52a85b74b2820bf1d2da62c30a8e62.jar \
