@@ -8,14 +8,17 @@
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}">
         {{friend.title}}
-        <div ng-if="friend.finder != null">
+        <div ng-if="!friend.finder">
+          <p>YERMOM</p>
+        </div>
+        <div ng-if="friend.finder">
           <div class="finder-info" ng-show="friend.finder">
             <span>Spotted By: {{friend.finder.name}}</span>
             <img class="headshot" src="{{friend.finder.pic}}" >
           </div>
         </div>
 
-    </ion-item>
-  </ion-list>
-</ion-content>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>
