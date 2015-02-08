@@ -84,8 +84,11 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
+.controller('FriendDetailCtrl', function($scope, $stateParams, Friends, $sce) {
+  $scope.$sce = $sce;
   $scope.friend = Friends.get($stateParams.friendId);
+  // var dataUrl = 'data:image/jpeg;base64, ' + $scope.friend.finder.url;
+  // $('#hackImage').attr('src', dataUrl);
 })
     .config(function($compileProvider){
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
@@ -93,6 +96,7 @@ angular.module('starter.controllers', [])
 
 .controller('FriendsCtrl', function($scope, Friends, Camera, store) {
     $scope.friends = Friends.all();
+
     // $scope.getPhoto = function() {
     //     console.log('Getting camera');
     //     Camera.getPicture().then(function(imageURI) {
@@ -117,6 +121,7 @@ angular.module('starter.controllers', [])
     //      */
     // }
 
+    
     $scope.fileSelected = function ($files, $event, friend) {
         $scope.val = '';
         $scope.errorMessage = '';
@@ -128,7 +133,7 @@ angular.module('starter.controllers', [])
                 var binaryString = readerEvt.target.result;
                 var profile = store.get('profile');
                 friend.finder = {
-                  url: btoa(binaryString),
+                  url: btoa(binaryString),                  
                   name: profile.name,
                   pic: profile.picture
                 };
