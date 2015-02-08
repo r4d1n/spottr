@@ -46,3 +46,12 @@
 2015-02-07 15:43:10.740 spottr[10746:288179] Resetting plugins due to page load.
 2015-02-07 15:43:11.534 spottr[10746:288179] Client configuration loaded
 2015-02-07 15:43:12.010 spottr[10746:288179] Finished load of: file:///Users/jedwood/Library/Developer/CoreSimulator/Devices/344D45D7-0077-413C-8A8E-8F472EBEB474/data/Containers/Bundle/Application/75113A7E-CD2F-4842-9AA6-5FD5AA8564D9/spottr.app/www/index.html#/login
+2015-02-07 16:09:48.166 spottr[11492:298802] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jedwood/Library/Developer/CoreSimulator/Devices/344D45D7-0077-413C-8A8E-8F472EBEB474/data/Containers/Data/Application/50C9E2B9-A210-4A53-B733-27B26B8ECA0D/Library/Cookies/Cookies.binarycookies
+2015-02-07 16:09:48.571 spottr[11492:298802] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-07 16:09:48.572 spottr[11492:298802] Multi-tasking -> Device: YES, App: YES
+2015-02-07 16:09:48.586 spottr[11492:298802] Unlimited access to network resources
+2015-02-07 16:09:49.278 spottr[11492:298802] [CDVTimer][keyboard] 0.088036ms
+2015-02-07 16:09:49.278 spottr[11492:298802] [CDVTimer][TotalPluginStartup] 0.335991ms
+2015-02-07 16:09:49.685 spottr[11492:298802] Resetting plugins due to page load.
+2015-02-07 16:09:51.009 spottr[11492:298802] Client configuration loaded
+2015-02-07 16:09:51.412 spottr[11492:298802] Finished load of: file:///Users/jedwood/Library/Developer/CoreSimulator/Devices/344D45D7-0077-413C-8A8E-8F472EBEB474/data/Containers/Bundle/Application/19E1FFB1-87D5-414F-9E48-521C41BC9CE7/spottr.app/www/index.html#/login

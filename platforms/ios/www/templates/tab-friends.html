@@ -1,4 +1,4 @@
-<ion-view title="Friends">
+<ion-view title="Spot Some Spots">
   <ion-nav-buttons side="right">
     <button class="button button-clear button-positive" ng-click="showAddFriend()">
       Add
@@ -8,20 +8,17 @@
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}">
         {{friend.title}}
-        <div class="finder-info" ng-show="friend.finder">
-          <span>Spotted By: {{friend.finder.name}}</span>
-          <img class="headshot" src="{{friend.finder.pic}}" >
+        <div ng-if="!friend.finder">
+        <p>YERMOM</p>
         </div>
-        <!-- <ion-option-button class="button-calm"
-          ng-click="editFriend(friend)">
-          Edit
-        </ion-option-button>
-        <ion-option-button class="button-assertive"
-          ng-click="deleteFriend(friend)">
-          Delete
-        </ion-option-button>
-
-      </ion-item>
-    </ion-list>
-  </ion-content>
+        <div ng-if="friend.finder">
+          <div class="finder-info" ng-show="friend.finder">
+            <span>Spotted By: {{friend.finder.name}}</span>
+            <img class="headshot" src="{{friend.finder.pic}}" >            
+          </div>
+        </div>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
 </ion-view>
