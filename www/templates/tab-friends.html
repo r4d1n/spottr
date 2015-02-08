@@ -6,20 +6,21 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
+
      <ion-item ng-repeat="friend in friends" type="item-text-wrap" class="item-button-right" ng-if="!friend.finder" style="padding-right: 20px;">
         {{friend.title}}
         <button class="button button-energized">
           <i class="icon ion-camera"></i>
         </button>       
-    </ion-item>
+      </ion-item>
 
-     <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}" class="item-button-right" ng-if="friend.finder" style="padding-right: 20px;">
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}" class="item-button-right" ng-if="friend.finder" style="padding-right: 20px;">
         {{friend.title}}        
         <div class="finder-info" ng-show="friend.finder">
           <span>Spotted By: {{friend.finder.name}}</span>
           <img class="headshot" src="{{friend.finder.pic}}" >            
         </div>
-    </ion-item>
+      </ion-item>
   </ion-list>
 </ion-content>
 </ion-view>
