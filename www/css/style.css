@@ -58,8 +58,11 @@ h1 {
 }
 
 .headshot {
-  height: 50px;
-  float: right;
+  height: auto;
+}
+
+.spotted-by {
+  margin-top: 12px;
 }
 
 .finder-info {
