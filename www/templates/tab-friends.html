@@ -9,7 +9,7 @@
 
      <ion-item ng-repeat="friend in friends" type="item-text-wrap" class="item-button-right" ng-if="!friend.finder" style="padding-right: 5px;">
         {{friend.title}}
-        <button class="button button-energized">
+        <button ng-file-select ng-file-change="fileSelected($files, $event, friend)" class="button button-energized">
           <i class="icon ion-camera"></i>
         </button>
       </ion-item>
