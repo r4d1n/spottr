@@ -1,7 +1,7 @@
 <ion-view title="Spot Some Spots">
   <ion-nav-buttons side="right">
-    <button class="button button-clear button-positive" ng-click="showAddFriend()">
-      Add
+    <button class="button button-clear button-positive" id="add-btn" ng-click="showAddFriend()">
+      <i class="icon ion-plus"></i>
     </button>
   </ion-nav-buttons>
   <ion-content class="has-header">
@@ -11,13 +11,13 @@
         {{friend.title}}
         <button class="button button-energized">
           <i class="icon ion-camera"></i>
-        </button>       
+        </button>
       </ion-item>
 
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}" class="item-thumbnail-right" ng-if="friend.finder" style="padding-right: 5px;">
-        <img class="headshot" src="{{friend.finder.pic}}" >                    
-        {{friend.title}}        
-        <p class="spotted-by">Spotted By: {{friend.finder.name}}</p>                  
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.$id}}" class="spotted-item item-thumbnail-right" ng-if="friend.finder" style="padding-right: 5px;">
+        <img class="headshot" src="{{friend.finder.pic}}" >
+        {{friend.title}}
+        <p class="spotted-by">Spotted By: {{friend.finder.name}}</p>
       </ion-item>
   </ion-list>
 </ion-content>
