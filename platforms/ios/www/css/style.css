@@ -51,16 +51,47 @@ table {
 
 body {
   font-family: 'Noto Sans', sans-serif;
-  }
+}
 
 h1 {
   font-family: 'Lobster', cursive;
 }
 
+.bar.bar-dark .title {
+  color: #ffcc66;
+}
+
+#add-btn {
+  font-family: 'Lobster', cursive;
+  color: #999;
+  line-height: 44px;
+  right: 16px;
+}
+
+#add-btn:hover {
+  color: #ffcc66;
+}
+
 .headshot {
-  height: 50px;
-  float: right;
+  height: auto;
+  line-height: 32px;
+}
+
+.spotted-by {
+  margin-top: 12px;
+}
+
+.spotted-item {
+  color: #666 !important;
+}
+
+.spotted-item a {
+  background-color: #cccccc !important;
 }
 
 .finder-info {
+}
+
+.button-energized:hover {
+
 }

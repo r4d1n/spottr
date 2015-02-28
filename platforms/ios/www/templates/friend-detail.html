@@ -4,7 +4,7 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view title="Found by: {{friend.finder.name}}">
+<ion-view title="Spotted by: {{friend.finder.name}}">
   <ion-content has-header="true" padding="true">
 
     <div class="list card">
@@ -15,8 +15,12 @@
         <p>Feb 5</p>
       </div>
 
-      <div class="item item-body">
-        <img class="full-image" src="{{friend.finder.pic}}">
+      <div class="item item-body">   
+
+        <div ng-bind-html="dataUrl" >
+          <!-- <img class="full-image" src="data:image/jpeg;base64, {{friend.finder.url}}"> -->
+        </div>
+
         <p>
           {{friend.finder.comment}}
         </p>

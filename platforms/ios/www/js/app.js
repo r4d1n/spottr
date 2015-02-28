@@ -8,10 +8,12 @@
 angular.module('starter', ['ionic',
   'starter.controllers',
   'starter.services',
+  'angularFileUpload',
   'auth0',
   'angular-storage',
   'angular-jwt',
-  'firebase'])
+  'firebase',
+  'ngSanitize'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

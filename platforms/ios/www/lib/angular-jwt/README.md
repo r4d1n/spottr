@@ -70,9 +70,12 @@ JWT interceptor will take care of sending the JWT in every request.
 ````js
 angular.module('app', ['angular-jwt'])
 .config(function Config($httpProvider, jwtInterceptorProvider) {
-  jwtInterceptorProvider.tokenGetter = function() {
+  // Please note we're annotating the function so that the $injector works when the file is minified
+  jwtInterceptorProvider.tokenGetter = ['myService', function(myService) {
+    myService.doSomething();
     return localStorage.getItem('id_token');
-  }
+  }];
+  
   $httpProvider.interceptors.push('jwtInterceptor');
 })
 .controller('Controller', function Controller($http) {
@@ -90,9 +93,12 @@ angular.module('app', ['angular-jwt'])
 ````js
 angular.module('app', ['angular-jwt'])
 .config(function Config($httpProvider, jwtInterceptorProvider) {
-  jwtInterceptorProvider.tokenGetter = function() {
+  // Please note we're annotating the function so that the $injector works when the file is minified
+  jwtInterceptorProvider.tokenGetter = ['myService', function(myService) {
+    myService.doSomething();
     return localStorage.getItem('id_token');
-  }
+  }];
+  
   $httpProvider.interceptors.push('jwtInterceptor');
 })
 .controller('Controller', function Controller($http) {
@@ -170,6 +176,18 @@ angular.module('app', ['angular-jwt'])
 ### More examples
 
 You can see some more examples of how this works in [the tests](https://github.com/auth0/angular-jwt/blob/master/test/unit/angularJwt/services/interceptorSpec.js)
+
+## FAQ
+
+### I have minification problems with angular-jwt in production. What's going on?
+
+When you're using the `tokenGetter` function, it's then called with the injector. `ngAnnotate` doesn't automatically detect that this function receives services as parameters, therefore you must either annotate this method for `ngAnnotate` to know, or use it like follows: 
+
+````js
+jwtInterceptorProvider.tokenGetter = ['store', '$http', function(store, $http) {
+  ...
+}];
+````
 
 ## Usages
 

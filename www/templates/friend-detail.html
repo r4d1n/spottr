@@ -17,7 +17,9 @@
 
       <div class="item item-body">   
 
-        <img class="full-image" src="data:image/jpeg;base64, {{friend.finder.url}}">
+        <div ng-bind-html="dataUrl" >
+          <!-- <img class="full-image" src="data:image/jpeg;base64, {{friend.finder.url}}"> -->
+        </div>
 
         <p>
           {{friend.finder.comment}}

@@ -87,8 +87,9 @@ angular.module('starter.controllers', [])
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends, $sce) {
   $scope.$sce = $sce;
   $scope.friend = Friends.get($stateParams.friendId);
-  // var dataUrl = 'data:image/jpeg;base64, ' + $scope.friend.finder.url;
-  // $('#hackImage').attr('src', dataUrl);
+  var du = '<img class="full-size" style="width:100%" src="data:image/jpeg;base64, ' + $scope.friend.finder.url + '">';
+  $scope.dataUrl = $sce.trustAsHtml(du);
+  // $('.full-image').attr('src', dataUrl);
 })
     .config(function($compileProvider){
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
